@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyLoran Dynamics</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-900 text-white p-4 fixed w-full top-0 shadow-lg">
+    <div class="container mx-auto flex justify-between">
+      <h1 class="font-bold text-xl">SkyLoran Dynamics</h1>
+      <div class="space-x-6">
+        <a href="#home" class="hover:text-blue-300">Home</a>
+        <a href="#profile" class="hover:text-blue-300">Our Profile</a>
+        <a href="#contact" class="hover:text-blue-300">Message Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-800 to-indigo-700 text-white pt-16">
+    <div class="text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Hi <span id="username">Guest</span> 👋
+      </h2>
+      <p class="text-lg md:text-xl">Welcome to SkyLoran Dynamics - Connecting The Future</p>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section id="profile" class="py-20 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Profile</h2>
+
+    <!-- Banner -->
+    <div class="mb-12">
+      <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="w-full h-64 object-cover rounded-xl shadow-lg">
+    </div>
+
+    <!-- About -->
+    <div class="grid md:grid-cols-2 gap-10">
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">About The Company</h3>
+        <p class="text-justify">
+          SkyLoran Dynamics is a company engaged in telecommunications engineering, maritime navigation systems, and the development of low-frequency radio infrastructure (Low Frequency Navigation Systems). The company possesses official legal authorization and adequate project experience, enabling it to have the technical and administrative capacity to carry out the construction of an eLORAN Master Station (MS).
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Vision & Mission</h3>
+        <p class="text-justify"><strong>Vision:</strong> To become a leading company in the development of reliable, precise, and sustainable low-frequency navigation and telecommunications infrastructure systems, supporting maritime safety and national navigation resilience.</p>
+        <p class="mt-2"><strong>Mission:</strong></p>
+        <ul class="list-disc ml-6 mt-2">
+          <li>To deliver innovative and integrated telecommunications engineering solutions aligned with international standards.</li>
+          <li>To strengthen national navigation resilience through robust GNSS backup systems.</li>
+          <li>To continuously enhance expertise and technological capabilities through research and development.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Headquarters -->
+  <section class="bg-blue-50 py-16">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Headquarters</h2>
+    <div class="flex flex-col md:flex-row justify-center gap-10 text-center">
+      <div>
+        <div class="w-32 h-32 bg-blue-300 rounded-full mx-auto"></div>
+        <p class="mt-4 font-semibold">Jakarta</p>
+      </div>
+      <div>
+        <div class="w-32 h-32 bg-blue-400 rounded-full mx-auto"></div>
+        <p class="mt-4 font-semibold">Bandung</p>
+      </div>
+      <div>
+        <div class="w-32 h-32 bg-blue-500 rounded-full mx-auto"></div>
+        <p class="mt-4 font-semibold">Surabaya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Message Us</h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Form -->
+      <form id="messageForm" class="bg-white p-6 rounded-xl shadow-lg">
+        <div class="mb-4">
+          <label class="block mb-1">Name</label>
+          <input type="text" id="name"
+            class="w-full border p-2 rounded" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-1">Email</label>
+          <input type="email" id="email"
+            class="w-full border p-2 rounded" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-1">Phone</label>
+          <input 
+            type="tel" 
+            id="phone"
+            inputmode="numeric"
+            pattern="[0-9]+"
+            class="w-full border p-2 rounded"/>
+        </div>
+
+        <div class="mb-4">
+          <label class="block mb-1">Message</label>
+          <textarea id="message"
+            class="w-full border p-2 rounded"></textarea>
+        </div>
+
+        <button type="submit"
+          class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600">
+          Submit
+        </button>
+      </form>
+
+      <!-- Output -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow-lg">
+        <h3 class="font-semibold mb-4">Submitted Data:</h3>
+        <p id="output"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-white text-center p-4">
+    © 2026 TeleConnect. All Rights Reserved.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
