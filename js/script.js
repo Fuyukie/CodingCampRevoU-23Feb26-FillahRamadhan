@@ -16,7 +16,6 @@ if (storedName) {
   document.getElementById("username").innerText = storedName;
 }
 
-
 // =============================
 // Load Saved Form Data
 // =============================
@@ -27,6 +26,9 @@ function displayData(data) {
     <p><strong>Email:</strong> ${data.email}</p>
     <p><strong>Phone:</strong> ${data.phone}</p>
     <p><strong>Message:</strong> ${data.message}</p>
+    <p class="mt-2 text-sm text-gray-500">
+      <strong>Submitted At:</strong> ${data.submittedAt}
+    </p>
   `;
 }
 
@@ -35,7 +37,6 @@ const savedData = JSON.parse(localStorage.getItem("formData"));
 if (savedData) {
   displayData(savedData);
 }
-
 
 // =============================
 // Form Submit
@@ -54,7 +55,16 @@ document.getElementById("messageForm").addEventListener("submit", function (e) {
     return;
   }
 
-  const formData = { name, email, phone, message };
+  const now = new Date();
+  const formattedTime = now.toLocaleString(); 
+
+  const formData = {
+    name,
+    email,
+    phone,
+    message,
+    submittedAt: formattedTime
+  };
 
   localStorage.setItem("formData", JSON.stringify(formData));
 
